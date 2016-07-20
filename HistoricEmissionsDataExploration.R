@@ -47,13 +47,20 @@ lines(USA_Reported2012$Year, USA_Reported2012$CO2_LU, col = 2012)
 lines(USA_Reported2013$Year, USA_Reported2013$CO2_LU, col = 2013)
 lines(USA_Reported2014$Year, USA_Reported2014$CO2_LU, col = 2014)
 
-#mapping change in one variable (CO2_LU) over time graphically
-#plot of change in 1990 CO2_LU numbers vs year reported
+#mapping change in one variable (Total_LU) over time graphically
+#plot of change in 1990 Total_LU numbers vs year reported
 USA_Year1990 <- subset(USA_NetTotals, Year == 1990)
-plot(unique(USA_NetTotals$Reported), USA_Year1990$CO2_LU,
+USA_Year1991 <- subset(USA_NetTotals, Year == 1991)
+USA_Year2000 <- subset(USA_NetTotals, Year == 2000)
+plot(unique(USA_NetTotals$Reported), USA_Year1990$Total_LU,
      main = "Change in Reported 1990 Net CO2 Emissions",
-     ylab = "CO2 Emissions",
+     ylab = "Total Emissions",
      xlab = "Year of Reporting",
      pch = 19,
      col = "blue")
-
+points(unique(USA_NetTotals$Reported), USA_Year1991$Total_LU,
+       pch = 19,
+       col = "red") #adding points for 1990
+points(unique(USA_NetTotals$Reported), USA_Year2000$Total_LU,
+       pch = 19,
+       col = "purple") #adding points for 2000
