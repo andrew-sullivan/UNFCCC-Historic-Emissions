@@ -15,15 +15,15 @@ USA_NetTotals <- read.csv("./USA_NetTotals.csv")
 #SF6 - SF6 (sulfur hexafluoride) emissions
 #Total_LU - net emissions including LULUCF
 #Total - net emissions excluding LULUCF
-#ALL UNITS CO2 EQUIVALENT Gg
+#ALL UNITS CO2 EQUIVALENT Gg/Megaton/10^6 kg
 names(USA_NetTotals)
 summary(USA_NetTotals)
 
 #basic plot of net CO2 vs year vs year reported #INCLUDE
-plot(USA_NetTotals$Year, USA_NetTotals$CO2_LU, 
+plot(USA_NetTotals$Year, USA_NetTotals$Total_LU, 
      col = USA_NetTotals$Reported,
      xlab = "Year of Emissions",
-     ylab = "Net Total CO2",
+     ylab = "Net Total Emissions",
      main = "Changes in Historical Emission Reports",
      pch = 19)
 
